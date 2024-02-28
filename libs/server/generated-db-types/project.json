@@ -1,0 +1,19 @@
+{
+  "name": "generated-db-types",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/server/generated-db-types/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/server/generated-db-types",
+        "main": "libs/server/generated-db-types/src/index.ts",
+        "tsConfig": "libs/server/generated-db-types/tsconfig.lib.json",
+        "assets": ["libs/server/generated-db-types/*.md"]
+      }
+    }
+  },
+  "tags": ["server"]
+}

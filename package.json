@@ -2,13 +2,30 @@
   "name": "@okkino/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "nx run-many -t serve",
+    "test": "nx run-many -t test",
+    "build": "nx run-many -t build",
+    "dockers:dev": "docker-compose -f tools/okkino-environment/dev.docker-compose.yml up -d --no-recreate --remove-orphans",
+    "db:migrate:dev": "npx env-cmd -f .local.env npx prisma migrate dev",
+    "db:studio": "npx env-cmd -f .local.env npx prisma studio"
+  },
   "private": true,
   "dependencies": {
+    "@fastify/helmet": "^11.1.1",
+    "@mercuriusjs/gateway": "^1.2.0",
     "@nestjs/common": "^10.0.2",
     "@nestjs/core": "^10.0.2",
-    "@nestjs/platform-express": "^10.0.2",
+    "@nestjs/graphql": "^12.1.1",
+    "@nestjs/mercurius": "^12.1.1",
+    "@nestjs/platform-fastify": "^10.3.3",
+    "@prisma/client": "^5.10.2",
     "axios": "^1.6.0",
+    "bcrypt": "^5.1.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "graphql": "^16.8.1",
+    "mercurius": "^13.3.3",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.0",
     "tslib": "^2.3.0"
@@ -26,6 +43,7 @@
     "@nx/webpack": "18.0.5",
     "@nx/workspace": "18.0.5",
     "@swc-node/register": "~1.8.0",
+    "@swc/cli": "~0.1.62",
     "@swc/core": "~1.3.85",
     "@swc/helpers": "~0.5.2",
     "@types/jest": "^29.4.0",
@@ -38,10 +56,13 @@
     "jest-environment-node": "^29.4.1",
     "nx": "18.0.5",
     "prettier": "^2.6.2",
+    "prisma-nestjs-graphql": "^20.0.2",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.3.2",
     "webpack-cli": "^5.1.4"
+  },
+  "prisma": {
+    "schema": "libs/data-access/database/src/lib/schema.prisma"
   }
 }
-

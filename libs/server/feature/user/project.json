@@ -1,0 +1,19 @@
+{
+  "name": "feature-user",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/server/feature/user/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/server/feature/user",
+        "main": "libs/server/feature/user/src/index.ts",
+        "tsConfig": "libs/server/feature/user/tsconfig.lib.json",
+        "assets": ["libs/server/feature/user/*.md"]
+      }
+    }
+  },
+  "tags": ["server"]
+}
