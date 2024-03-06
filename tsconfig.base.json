@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@okkino/data-access-db": ["libs/data-access/database/src/index.ts"],
+      "@okkino/feature-user": ["libs/server/feature/user/src/index.ts"],
+      "@okkino/generated-db-types": [
+        "libs/server/generated-db-types/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
