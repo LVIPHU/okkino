@@ -1,8 +1,14 @@
-import { Module } from '@nestjs/common';
+import { Module, ValidationPipe } from '@nestjs/common';
 import { GraphQLModule } from "@nestjs/graphql";
 import { MercuriusDriver, MercuriusDriverConfig } from "@nestjs/mercurius";
 import * as path from "path";
 import { UserModule } from "@okkino/feature-user";
+import { APP_PIPE } from "@nestjs/core";
+
+const validationProvider = {
+  provide: APP_PIPE,
+  useValue: new ValidationPipe()
+}
 
 @Module({
   imports: [
@@ -13,6 +19,6 @@ import { UserModule } from "@okkino/feature-user";
     }),
     UserModule
   ],
-  providers: [],
+  providers: [validationProvider],
 })
 export class AppModule {}
