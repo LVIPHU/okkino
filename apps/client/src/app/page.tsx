@@ -1,10 +1,9 @@
-import styles from './page.module.css';
 import React from 'react';
 import { Button } from 'antd';
 
 export default async function Index() {
   return (
-    <div className={styles.page}>
+    <div className={'bg-blue-200'}>
       hello word
         <Button type={'primary'}>Button</Button>
     </div>

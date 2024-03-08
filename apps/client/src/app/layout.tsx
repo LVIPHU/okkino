@@ -1,6 +1,6 @@
 import React from "react";
 import { AntdRegistry } from '@ant-design/nextjs-registry';
-import './global.css';
+import '../styles/global.css';
 
 export const metadata = {
   title: 'Welcome to okkino',
