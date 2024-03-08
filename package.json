@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nx run-many -t serve",
+    "start:server": "nx serve server",
+    "start:client": "nx dev client",
     "test": "nx run-many -t test",
     "build": "nx run-many -t build",
     "dockers:dev": "docker-compose -f tools/okkino-environment/dev.docker-compose.yml up -d --no-recreate --remove-orphans",
@@ -12,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
+    "@ant-design/nextjs-registry": "^1.0.0",
     "@fastify/helmet": "^11.1.1",
     "@mercuriusjs/gateway": "^1.2.0",
     "@nestjs/common": "^10.0.2",
@@ -20,6 +22,7 @@
     "@nestjs/mercurius": "^12.1.1",
     "@nestjs/platform-fastify": "^10.3.3",
     "@prisma/client": "^5.10.2",
+    "antd": "^5.15.1",
     "axios": "^1.6.0",
     "bcrypt": "^5.1.1",
     "class-transformer": "^0.5.1",
@@ -84,4 +87,3 @@
     "schema": "libs/data-access/database/src/lib/schema.prisma"
   }
 }
-
