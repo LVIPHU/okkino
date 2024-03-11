@@ -17,13 +17,11 @@ async function bootstrap() {
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error
-  await app.register(helmet, {
-    contentSecurityPolicy: false,
-  });
+  await app.register(helmet, { contentSecurityPolicy: false });
 
   app.enableCors();
 
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 3333;
   await app.listen(port);
   Logger.log(
     `🚀 Application playground is running on: http://localhost:${port}/graphiql`
