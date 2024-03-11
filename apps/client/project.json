@@ -1,0 +1,15 @@
+{
+  "name": "client",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/client",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "options": {
+        "executor": "@nx/web:webpack",
+        "postcssConfig": "apps/client/postcss.config.js"
+      }
+    }
+  },
+  "tags": ["client"]
+}
